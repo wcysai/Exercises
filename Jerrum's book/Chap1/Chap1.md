@@ -33,3 +33,9 @@ A trivial example is that $K_{3,3}$(classical non-planar graph,shown below) admi
 ![](3.png)
 
 The proof can be done through some simple addition/subtraction of the parity of some of the even cycles, which is omitted here.
+
+## Exercise 1.18
+
+The problem of counting closed subgraphs can be solved in the following manner: Consider the $(n\times m)$ incidence matrix $N$ for undirected graph $G$, $N=(\upsilon_{ve})$ where $\upsilon_{ve}=\begin{cases}+1 &\text{if $v$ is an end of $e$}\\0 & \text{otherwise}\end{cases} $
+
+One can easily see that to obtain a closed subgraph, one need to choose a set of columns, such that their sum in $\mathbb{Z}_{2}$ is equal to $0$, which the number can be calculated as $2^{m-r}$ where $r$ is the rank of $N$.
