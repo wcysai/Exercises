@@ -95,8 +95,13 @@ Consider the following randomized algorithm of generating a dominating set:
 
 Then, let $X$ be the number of vertices chosen in the first step of the algorithm, $Y$ be the number of vertices chosen in the second step of the algorithm. It follows that $\mathbb{E}[X]=np$ and $\mathbb{E}[Y]=m(1-p)^r$ since each the number of vertices chosen at the second the second is equal to the number of edges remaining, and each edges survives the first step with probability $m(1-p)^r$. Therefore, the expected size of the dominating set is $\mathbb{E}[(X+Y)]=\mathbb{E}[X]+\mathbb{E}[Y]=np+m(1-p)^r$. Then by expectation argument, there is a dominating set of size at most $np+(1-p)^rm$ for every real number $0\leq p\leq 1$. To show that there is a dominating set of size at most $\frac{m+n\ln{r}}{r}$, we take $p=\frac{\ln{r}}{r}$, then we need to show that $(1-\frac{\ln{r}}{r})^r\leq \frac{1}{r}$. By taking logarithms on both sides, we have $\ln(1-\frac{\ln{r}}{r})+\frac{\ln{r}}{r}\leq 0$. By studying the property of function $f(x)=\ln(1-x)+x$, we know $f(x)=0$ and $f'(x)=1-\frac{1}{1-x}<0$ when $x\in [0,1]$. Therefore $\ln(1-\frac{\ln{r}}{r})+\frac{\ln{r}}{r}\leq 0$ is thus proved.
 
+## Exercise 6.8
 
+Consider the following randomized algorithm:
 
+1. color each vertex of $K_n$ independently and uniformly at random with two colors
 
+2. For each monochromatic clique of size $k$, choose one of its $k$ vertices uniformly at random, then erase it and all its incident edges.
 
- 
+Let $X$ be the number of vertices remaining after the execution of the algorithm. For each clique of size $k$, the probability that it's monochromatic is $2^{1-\binom{n}{2}}$, and there are $\binom{n}{k}$ such cliques. Therefore $\mathbb{E}[X]=n-\binom{n}{k}2^{1-\binom{n}{2}}$. By the expectation argument, there exists a way to $2$-color the edges of $K_x$ so that there is no monochromatic clique of size $k$ when $x=n-\binom{n}{k}2^{1-\binom{n}{2}}$.
+
