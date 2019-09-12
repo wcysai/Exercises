@@ -1,6 +1,8 @@
 ## Exercise 6.1
 
-(a) Assign each variable with True or False uniformly and independently at random. Let $X$ be the random variable denoting number of satisfied clauses. Since there are $m$ clauses and each is satisfied with probability $1-2^{-k}$, there's $\mathbb{E}[X]=m(1-2^{-k})$, which implies there exists an assignment that satisfies at least $m(1-2^{-k})$ of the clauses.
+
+
+.-(a) Assign each variable with True or False uniformly and independently at random. Let $X$ be the random variable denoting number of satisfied clauses. Since there are $m$ clauses and each is satisfied with probability $1-2^{-k}$, there's $\mathbb{E}[X]=m(1-2^{-k})$, which implies there exists an assignment that satisfies at least $m(1-2^{-k})$ of the clauses.
 
 To establish a lower bound for the probability of the algorithm returning an assignment that satisfies at least $m(1-2^{-k})$ clauses, we let $p=Pr\big(X\geq m(1-2^{-k})\big)$, and observe that $X\leq m$. Therefore,
 
@@ -105,3 +107,18 @@ Consider the following randomized algorithm:
 
 Let $X$ be the number of vertices remaining after the execution of the algorithm. For each clique of size $k$, the probability that it's monochromatic is $2^{1-\binom{n}{2}}$, and there are $\binom{n}{k}$ such cliques. Therefore $\mathbb{E}[X]=n-\binom{n}{k}2^{1-\binom{n}{2}}$. By the expectation argument, there exists a way to $2$-color the edges of $K_x$ so that there is no monochromatic clique of size $k$ when $x=n-\binom{n}{k}2^{1-\binom{n}{2}}$.
 
+## Exercise 6.9
+
+(a) Choose the ranking $R$ uniformly at random, i.e. , each possible ranking is chosen with equal probability $\frac{1}{n!}$. Let $X$ be the random variable denoting the number of edges that disagree with $R$, then $\mathbb{E}[X]=\frac{\binom{n}{2}}{2}$, therefore by expectation argument, there exists a ranking that disagrees with at most $50\%$ of the edges.
+
+
+
+(b) Suppose that this time we generate a tournament uniformly at random,   i.e. , each possible tournament is chosen with equal probability $\frac{1}{2^{\binom{n}{2}}}$. Let $X$ be the random variable denoting the number of edges that disagree with the ranking. Since $X$ is the sum of $0-1$ independent random variables, by applying Chernoff's bound with $\mu=\frac{1}{2}$ and $\delta=0.02$, we can obtain that $Pr(X\leq (1-\delta)\mu)\leq e^{\frac{-\mu\delta^2}{2}}=e^{-\Omega(n^2)}$ By taking a union bound over all possible rankings we have the probability that $Pr[\text{there exists a ranking that disagrees with less than $49\%$ of the edges}]\leq n!e^{-\Omega(n^2)}$  As we can see, for sufficiently large $n$, $n!e^{-\Omega(n^2)}<1$. Therefore the exists a tournament such that every ranking disagrees with at least $49\%$ of the edges in the tournament.
+
+
+
+## Exercise 6.10
+
+(a) Let $\mathcal{F}$ be the family of all subsets of $\{1,2,\dots,n\}$ of size $\lfloor\frac{n}{2}\rfloor$ of. It's clearly that $\mathcal{F}$ satisfies the given property and has cardinality $\binom{n}{\lfloor\frac{n}{2}\rfloor}$.
+
+(b)
