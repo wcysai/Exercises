@@ -121,4 +121,11 @@ Let $X$ be the number of vertices remaining after the execution of the algorithm
 
 (a) Let $\mathcal{F}$ be the family of all subsets of $\{1,2,\dots,n\}$ of size $\lfloor\frac{n}{2}\rfloor$ of. It's clearly that $\mathcal{F}$ satisfies the given property and has cardinality $\binom{n}{\lfloor\frac{n}{2}\rfloor}$.
 
-(b)
+(b) Choose a random permutation of the numbers from $1$ to $n$. Let $X_k=1$ if the first $k$ numbers in the permutation yield a set in $\mathcal{F}$ and $X=\sum\limits_{k=0}^{n}X_k$. Following the definition of antichain, there's at most one set in $\mathcal{F}$, which implies that $\mathbb{E}[X]\leq 1$. By counting in another way we can yield the required inequality:
+
+$$\mathbb{E}[X]=\sum\limits_{k=0}^{n}\frac{f_k}{\binom{n}{k}}\leq 1$$
+
+(c) Following the theorem of binomial coefficients that $\binom{n}{k}\leq \binom{n}{\lfloor\frac{n}{2}\rfloor}$ for any $k$, we have $$1\geq \sum\limits_{k=0}^{n}\frac{f_k}{\binom{n}{k}}\geq \sum\limits_{k=0}^{n}\frac{f_k}{\binom{n}{\lfloor\frac{n}{2}\rfloor}}=\frac{\vert \mathcal{F}\vert}{\binom{n}{\lfloor\frac{n}{2}\rfloor}}$$
+
+## Exercise 6.11
+
