@@ -143,11 +143,37 @@ $$\mathbb{E}[X]=\sum\limits_{k=0}^{n}\frac{f_k}{\binom{n}{k}}\leq 1$$
 
 ## Exercise 6.12
 
-Clearly, for each clique of size $4$, there are $\binom{n-4}{4}$ cliques sharing no vertices with it, $4\binom{n-4}{3}$ cliques sharing one vertex with it, $6\binom{n-4}{2}$ cliques sharing two vertices with it, $4\binom{n-4}{1}$ cliques sharing three vertex with it, and exactly one clique sharing four vertices with it. Thus
+Clearly, for each clique of size $4$, there are $\binom{n-4}{4}$ cliques sharing no vertices with it, $4\binom{n-4}{3}$ cliques sharing one vertex with it, $6\binom{n-4}{2}$ cliques sharing two vertices with it, $4\binom{n-4}{1}$ cliques sharing three vertices with it, and exactly one clique sharing four vertices with it. Thus
 
 ​        $$ \mathbb{E}[X^2]=\sum\limits_{i=1}^{\binom{n}{4}}Pr(X_i=1)\mathbb{E}[X\vert X_i=1]=\binom{n}{4}p^6(\binom{n-4}{4}\cdot p^6+4\binom{n-4}{3}\cdot p^6+6\binom{n-4}{2}\cdot p^5+4\binom{n-4}{1}\cdot p^3+1)$$
 
 Therefore, 
 
-$$Var[X]=\mathbb{E}[X^2]-(\mathbb{E[X]})^2=\binom{n}{4}p^6(\binom{n-4}{4}\cdot p^6+4\binom{n-4}{3}\cdot p^6+6\binom{n-4}{2}\cdot p^5+4\binom{n-4}{1}\cdot p^3+1)$-(\binom{n}{4})^2p^{12}$$
+$$Var[X]=\mathbb{E}[X^2]-(\mathbb{E}[X])^2=\binom{n}{4}p^6(\binom{n-4}{4}\cdot p^6+4\binom{n-4}{3}\cdot p^6+6\binom{n-4}{2}\cdot p^5+4\binom{n-4}{1}\cdot p^3+1)-(\binom{n}{4})^2p^{12}$$
+
+
+
+## Exercise 6.13
+
+The threshold function should be $p=f(n)=o(n^{-\frac{2}{k-1}})$. Here we use conditional expected equality for proving that the threshold function is correct for $k=5$.
+
+for each clique of size $5$, there are $\binom{n-5}{5}$ cliques sharing no vertices with it, $5\binom{n-5}{4}$ cliques sharing one vertex with it, $10\binom{n-5}{3}$ cliques sharing two vertices with it, $10\binom{n-5}{2}$ cliques sharing three vertex with it,$10\binom{n-5}{2}$ cliques sharing four vertices with it and ,exactly one clique sharing five vertices with it. Thus $\mathbb{E}[X\vert X_i=1]=\sum\limits_{i=1}^{\binom{n}{4}}\mathbb{E}[X_i\vert X_j=1]=\binom{n-5}{5}\cdot p^{10}+5\binom{n-5}{4}\cdot p^{10}+10\binom{n-5}{3}\cdot p^9+10\binom{n-5}{2}\cdot p^7+10\binom{n-5}{1}\cdot p^4+1$
+
+Then by the conditional expectation inequality, it follows that
+
+$Pr(X>0)\geq\sum\limits_{i=1}^{\binom{n}{5}}\frac{Pr(X_i=1)}{\mathbb{E}[X\vert X_i=1]}=\frac{\binom{n}{5}p^{10}}{\binom{n-5}{5}\cdot p^{10}+5\binom{n-5}{4}\cdot p^{10}+10\binom{n-5}{3}\cdot p^9+10\binom{n-5}{2}\cdot p^7+10\binom{n-5}{1}\cdot p^4+1}$, which approaches $1$ as $n$ grows large when $p=f(n)=\omega(n^{-\frac{1}{2}})$, which suits the generalized threshold function.
+
+## Exercise 6.14
+
+Let $X$ be the number of isolated vertices in $G$, and $X_i=\begin{cases} 1 & i \text{ is an isolated vertex}\\ 0 & \text{ otherwise} \end{cases}$. Then $Pr(X>0)\geq \sum\limits_{i=1}^{n}\frac{Pr(X_i=1)}{\mathbb{E}[X\vert X_i=1]}=\frac{n(1-p)^{n-1}}{1+(n-1)(1-p)^{n-2}}=\frac{1}{\frac{1}{n(1-p)^{n-1}}+\frac{n-1}{n(1-p)}}$, which approaches $1$ as $n\to \infty$ under the constraint that $p=c\ln{n}$ and $c<1$.
+
+## Exercise 6.15
+
+Since $X$is nonnegative, by Markov's inequality, we have $Pr(X\geq 1)\leq \mathbb{E}[X]=\binom{n}{3}p^3\leq 1$.
+
+For the second inequality, we apply conditional expectation inequality:
+
+$$ Pr(X\geq 1)\geq \sum\limits_{i=1}^{\binom{n}{3}}\frac{Pr(X_i=1)}{\mathbb{E}[X\vert X_i=1]}=\frac{\binom{n}{3}p^3}{\binom{n-3}{3}\cdot p^3+\binom{n-3}{2}\cdot p^3+\binom{n-3}{1}\cdot p+1}$$, which approaches $\frac{1}{7}$ as $n\to \infty$, therefore $\lim\limits_{n\to \infty}Pr(X\geq 1)\geq \frac{1}{7}$.
+
+## Exercise 6.16
 
