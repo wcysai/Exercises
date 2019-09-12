@@ -129,3 +129,25 @@ $$\mathbb{E}[X]=\sum\limits_{k=0}^{n}\frac{f_k}{\binom{n}{k}}\leq 1$$
 
 ## Exercise 6.11
 
+(a) $\mathbb{E}[X]=\sum\limits_{i=1}^{\binom{n}{3}}\mathbb{E}[X_i]=\binom{n}{3}p^3$
+
+(b) By a union bound argument we have $Pr(X>0)\leq \sum\limits_{i=1}^{\binom{n}{3}}p^3=\binom{n}{3}p^3$, which approaches $0$ as $pn\to 0$.
+
+(c) $Var[X_i]=\mathbb{E}[X_i^2]-(\mathbb{E}[X_i])^2=p^3-p^6\leq p^3$
+
+(d) For pairs $i\neq j$, If the triplets represented by $i$ and $j$ share two vertices, then $Cov(X_i,X_j)=\mathbb{E}[X_iX_j]-\mathbb{E}[X_i]E[X_j]=p^5-p^6$, otherwise $X_i$ and $X_j$ are independent, thus $Cov(X_i,X_j)=0$. It can be seen that there are$O(n^4)$ such pair of triplets that share two vertices.
+
+(e) $$Var[X]=Var[\sum\limits_{i=1}^{\binom{n}{3}}X_i]=\mathbb{E}[X]+\sum\limits_{i=1}^{\binom{n}{3}}Var[X]+\sum\limits_{i=1}^{n}\sum\limits_{j=i+1}^{n}Cov(X_i,X_j)=O(n^3p^3+n^4(p^5-p^6))$$
+
+(f) $Pr(X=0)\leq \frac{Var[X]}{(\mathbb{E}[X])^2}=O(\frac{n^3p^3+n^4p^5-n^4p^6}{n^6p^6})=O(\frac{1}{(np)^3})+O(\frac{p-p^2}{(np)^2})$, which clearly approaches $0$ when $np\to \infty$
+
+## Exercise 6.12
+
+Clearly, for each clique of size $4$, there are $\binom{n-4}{4}$ cliques sharing no vertices with it, $4\binom{n-4}{3}$ cliques sharing one vertex with it, $6\binom{n-4}{2}$ cliques sharing two vertices with it, $4\binom{n-4}{1}$ cliques sharing three vertex with it, and exactly one clique sharing four vertices with it. Thus
+
+​        $$ \mathbb{E}[X^2]=\sum\limits_{i=1}^{\binom{n}{4}}Pr(X_i=1)\mathbb{E}[X\vert X_i=1]=\binom{n}{4}p^6(\binom{n-4}{4}\cdot p^6+4\binom{n-4}{3}\cdot p^6+6\binom{n-4}{2}\cdot p^5+4\binom{n-4}{1}\cdot p^3+1)$$
+
+Therefore, 
+
+$$Var[X]=\mathbb{E}[X^2]-(\mathbb{E[X]})^2=\binom{n}{4}p^6(\binom{n-4}{4}\cdot p^6+4\binom{n-4}{3}\cdot p^6+6\binom{n-4}{2}\cdot p^5+4\binom{n-4}{1}\cdot p^3+1)$-(\binom{n}{4})^2p^{12}$$
+
