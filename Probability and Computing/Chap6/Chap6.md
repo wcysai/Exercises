@@ -177,3 +177,4 @@ $$ Pr(X\geq 1)\geq \sum\limits_{i=1}^{\binom{n}{3}}\frac{Pr(X_i=1)}{\mathbb{E}[X
 
 ## Exercise 6.16
 
+(a)
