@@ -177,4 +177,10 @@ $$ Pr(X\geq 1)\geq \sum\limits_{i=1}^{\binom{n}{3}}\frac{Pr(X_i=1)}{\mathbb{E}[X
 
 ## Exercise 6.16
 
-(a)
+(a) Consider the trapezoid rule and apply a similar method in this problem, then we have $\ln{n!}=\int\limits_{1}^{n}\ln{x} dx+\frac{1}{2}\ln{n}-\sum\limits_{i=1}^{\infty}\epsilon_{j}=n\ln{n}-n+1-(\sum\limits_{j=1}^{\infty}\epsilon_j-\sum\limits_{j=n}^{\infty}\epsilon_j)$ where $\epsilon_j$ is the remainder term of the difference between the integral and the trapezoid.
+
+By not considering the remainder term we arrived at Equation (5.5). Here we directly take the exponential on both sides, and get $n!=e^{1-\sum\limits_{j=1}^{\infty}\epsilon_j}\sqrt{n}(\frac{n}{e})^ne^{\sum\limits_{j=n}^{\infty}\epsilon_j}\leq e^{1-\sum\limits_{j=1}^{\infty}\epsilon_j}\sqrt{n}(\frac{n}{e})^n $
+
+By [Wallis product](https://en.wikipedia.org/wiki/Wallis_product) we can derive that $e^{1-\sum\limits_{j=1}^{\infty}\epsilon_j}=\sqrt{2\pi}$, therefore the bound is established: $n!\geq \sqrt{2\pi n}(\frac{n}{e})^n$
+
+(b) Let $k$ be the number of $Y_i$ s that are equal to $1$. If $k\leq c\sqrt{m}$, then it's clear that $Pr(\vert \sum\limits_{i=1}^{m}b_iY_i\vert\leq c\sqrt{m})$
