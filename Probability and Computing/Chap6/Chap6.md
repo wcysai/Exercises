@@ -1,8 +1,86 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Exercise 6.1
 
 
 
-.-(a) Assign each variable with True or False uniformly and independently at random. Let $X$ be the random variable denoting number of satisfied clauses. Since there are $m$ clauses and each is satisfied with probability $1-2^{-k}$, there's $\mathbb{E}[X]=m(1-2^{-k})$, which implies there exists an assignment that satisfies at least $m(1-2^{-k})$ of the clauses.
+ (a) Assign each variable with True or False uniformly and independently at random. Let $X$ be the random variable denoting number of satisfied clauses. Since there are $m$ clauses and each is satisfied with probability $1-2^{-k}$, there's $\mathbb{E}[X]=m(1-2^{-k})$, which implies there exists an assignment that satisfies at least $m(1-2^{-k})$ of the clauses.
 
 To establish a lower bound for the probability of the algorithm returning an assignment that satisfies at least $m(1-2^{-k})$ clauses, we let $p=Pr\big(X\geq m(1-2^{-k})\big)$, and observe that $X\leq m$. Therefore,
 
@@ -183,4 +261,11 @@ By not considering the remainder term we arrived at Equation (5.5). Here we dire
 
 By [Wallis product](https://en.wikipedia.org/wiki/Wallis_product) we can derive that $e^{1-\sum\limits_{j=1}^{\infty}\epsilon_j}=\sqrt{2\pi}$, therefore the bound is established: $n!\geq \sqrt{2\pi n}(\frac{n}{e})^n$
 
-(b) Let $k$ be the number of $Y_i$ s that are equal to $1$. If $k\leq c\sqrt{m}$, then it's clear that $Pr(\vert \sum\limits_{i=1}^{m}b_iY_i\vert\leq c\sqrt{m})$
+## Exercise 6.17
+
+Color all edges of $K_n$ uniformly at random. Let $E_i$ be the event that the $C_i$ is monochromatic. Then $Pr(E_i)=2^{1-\binom{k}{2}}$. For two events, $E_i$ and $E_j$ to not be mutually independent, they must share at least two vertices. Therefore the number of degrees in the dependency graph is bounded by $\binom{k}{2}\binom{n}{k-2}$. Therefore by Lovasz Local Lemma, If $4dp\leq 4\binom{k}{2}\binom{n}{k-2}2^{1-\binom{k}{2}}\leq 1$, then it's possible to color the edges of $K_n$with two colors so that it has no monochromatic $K_k$ subgraph.
+
+## Exercise 6.18
+
+
+
