@@ -267,5 +267,4 @@ Color all edges of $K_n$ uniformly at random. Let $E_i$ be the event that the $C
 
 ## Exercise 6.18
 
-
-
+Suppose we set all $x_i$ to be the same, which we'll call $x$, then according to the general form of Lovasz Local Lemma, it follows that $Pr(E_i)\leq x(1-x)^d\leq \frac{d^d}{d+1^{d+1}}$. Since the maximum is taken when $x=\frac{1}{d+1}$. Therefore, if $ep(d+1)\leq 1$, it follows that $p\leq \frac{1}{e(d+1)}\leq \frac{d^d}{d+1^{d+1}}$, where the second inequality is given by $\frac{1}{e}\;eq (\frac{d}{d+1})^{d}$ . Therefore the symmetric version of Lovasz Loval Lemma is proved.
