@@ -271,9 +271,8 @@ Suppose we set all $x_i$ to be the same, which we'll call $x$, then according to
 
 ## Exercise 6.19
 
-For every $(u,v)\in E$, let $A_{u,v}$ be the event that $u$ and $v$ have the same color. Considering the family of such events, it follows that $P(A_{u,v})\leq \frac{r}{n}\cdot \frac{1}{8r}=\frac{1}{8n}$. Also, the degree of the dependency graph is bounded by $2n$, since only the events that share a vertex. Therefore we have $4dp\leq 1$, and by the symmetric version of Lovasz Local Lemma, it follows that there is a proper coloring of $G$ assigning to each vertex $v$ a coloe from its class $S(v)$ such that, for any edge $(u,v)\in E$, the colors assigned to $u$ and $v$ are different.
+For every $(u,v)\in E$, let $A_{u,v}$ be the event that $u$ and $v$ have the same color. Considering the family of such events, it follows that $Pr(A_{u,v})\leq \frac{r}{n}\cdot \frac{1}{8r}=\frac{1}{8n}$. Also, the degree of the dependency graph is bounded by $2n$, since only the events that share a vertex. Therefore we have $4dp\leq 1$, and by the symmetric version of Lovasz Local Lemma, it follows that there is a proper coloring of $G$ assigning to each vertex $v$ a coloe from its class $S(v)$ such that, for any edge $(u,v)\in E$, the colors assigned to $u$ and $v$ are different.
 
 ## Exercise 6.20
 
-Let $E_i$ be the event that the $i$th edge is monoch
-
+Consider 2-coloring each vertex uniformly at random. Let $E_i$ be the event that the $i$th edge is monochromatic, then it follows that $Pr(E_i)=2^{-k}$. Also the degree of dependency graph is bounded by $d\leq k^2$ since two edges are independent if they don't share any common vertices. Then when $4dp=2^{2-k}k^2\leq 1$, which is equivalent to $k\leq 6$, by the symmetric version of Lovasz Local Lemma, the vertices of a $k$-uniform,$k$-regular hypregraph can be $2$-colored so that no edge is monochromatic.
