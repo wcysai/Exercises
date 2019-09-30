@@ -2,4 +2,5 @@
 
 1. To prove that the MC is irreducible, we need to show that every two states of proper coloring is reachable from each other. Since $q\geq \Delta+2$, we can change the color of a single vertex to some assigned color $c$, by first changing all its neighbors with color $c$ to a different color, therefore every state is reachable, and thus the MC is irreducible.  For every two states $x$ and $y$ adjacent to each other(that is, the matching represented by $x$ and $y$ differs by exactly the color of one vertex.), then it's clear that $P(x,y)=P(y,x)$. Since this MC is clearly irreducible, then according to Lemma 3.7, the stationary distribution is uniform over $\Omega$.
 2. For this problem, any graph with smallest degree $\delta=\Delta$ has such "frozen" coloring. For example, take $K_5$ and any proper coloring, its only transition leads to itself.
-3. 
+3. The original MC can be modified a little to obtain an ergodic MC when $q\geq \Delta +1$, by each time choosing an edge $(u,v)$ uniformly at random, keeping the color of other vertices the same, sequentially determine the color of $u$ and $v$ uniformly at random from $Q\backslash X_0(\Gamma(u)\backslash v)$ and  $Q\backslash (X_0(\Gamma(v)\backslash u)\cup X_1(v))$, respectively. It's not hard to prove that this MC is ergodic.
+
